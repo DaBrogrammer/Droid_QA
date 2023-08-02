@@ -1,5 +1,6 @@
 package com.project.walkingrobot;
 
+import javafx.application.Platform;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -239,13 +240,20 @@ public class QATestRobot {
 	
 	@Test
 	public void testEndProgramCommand() {
-		
+		Main main = new Main();
+		main.executeCommand("Q", true);
+		Assertions.assertEquals("End of program.", outputStream.toString().trim());
 	}
 	
 	
 	@Test
 	public void testInvalidCommand() {
-		
+		Platform.startup(() -> {
+		String invalidExample = "invalid";
+		Main main = new Main();
+		main.executeCommand(invalidExample, true);
+		Assertions.assertEquals(outputStream.toString(), "Invalid command. Please try again!");
+		});
 	}
 	
 	
