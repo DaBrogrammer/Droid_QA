@@ -257,5 +257,34 @@ public class QATestRobot {
 		});
 	}
 	
-	
+	//	// Data flow testing
+//
+//	@Test
+//	public void DataFlow_MoveTest1() {
+//		Robot robot1 = new Robot();
+//		Floor floor1 = new Floor(15);
+//		robot1.move (10, floor1);
+//		Assertions.assertEquals(0, robot1.getX());
+//		Assertions.assertEquals(10, robot1.getY());
+//	}
+//
+//	@Test
+//	public void DataFlow_MoveTest2() {
+//		Platform.startup(() -> {
+//			Robot robot1 = new Robot();
+//			Floor floor1 = new Floor(5);
+//			robot1.move(-2, floor1);
+//			Assertions.assertEquals("Invalid number of steps: -2", outputStream.toString().trim());
+//		});
+//	}
+//
+//	@Test
+//	public void DataFlow_MoveTest3() {
+//		Platform.startup(() -> {
+//			Robot robot1 = new Robot();
+//			Floor floor1 = new Floor(5);
+//			robot1.move(7, floor1);
+//			Assertions.assertEquals("Invalid number of steps: 7", outputStream.toString().trim());
+//		});
+//	}
 }
