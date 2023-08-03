@@ -241,8 +241,9 @@ public class QATestRobot {
 	@Test
 	public void testEndProgramCommand() {
 		Main main = new Main();
-		main.executeCommand("Q", true);
+		boolean endProgram = main.executeCommand("Q", true);
 		Assertions.assertEquals("End of program.", outputStream.toString().trim());
+		Assertions.assertFalse(endProgram);
 	}
 	
 	
